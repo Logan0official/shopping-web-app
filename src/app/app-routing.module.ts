@@ -24,7 +24,8 @@ const appRoutes: Routes = [
     { path: '', component: AdminComponent },
     { path: ':id/edit', component: ProductEditComponent, }
   ] },
-  { path: 'new', component: ProductAddComponent }
+  { path: 'new', component: ProductAddComponent },
+  { path: '**', component: ProductListComponent }
 ];
 
 @NgModule({

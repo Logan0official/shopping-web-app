@@ -1,26 +1,26 @@
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 50;
-}
+// .backdrop {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background: rgba(0, 0, 0, 0.75);
+//   z-index: 50;
+// }
 
-.container {
-  position: fixed;
-  top: 5vh;
-  left: 20vw;
-  height: 90vh;
-  width: 60vw;
-  padding: 16px;
-  z-index: 100;
-  background: white;
-  box-shadow: 0 2px 8px rbga(0, 0, 0, 0.26);
-  border: 2px solid gray;
-  border-radius: 10px;
-}
+// .container {
+//   position: fixed;
+//   top: 5vh;
+//   left: 20vw;
+//   height: 90vh;
+//   width: 60vw;
+//   padding: 16px;
+//   z-index: 100;
+//   background: white;
+//   box-shadow: 0 2px 8px rbga(0, 0, 0, 0.26);
+//   border: 2px solid gray;
+//   border-radius: 10px;
+// }
 
 /* .form {
   border: 2px solid gray;
@@ -29,7 +29,9 @@
 } */
 
 img {
-  width: 100%;
+  margin: 10% 10%;
+  width: 80%;
+  height: 80%;
 }
 
 label {
@@ -44,7 +46,7 @@ textarea {
 }
 
 button {
-  margin: 45px 37px 0 30px;
+  // margin: 45px 37px 0 30px;
   border: 2px solid gray;
   background-color: rgba(80, 80, 80, 0.1);
   font-size: 20px;

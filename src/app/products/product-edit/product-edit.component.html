@@ -1,8 +1,7 @@
-<div class="backdrop" (click)="onChanel()"></div>
 <div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-md-6 form">
-      <form [formGroup]="editForm" (ngSubmit)="updateForm()" novalidate>
+  <form [formGroup]="editForm" (ngSubmit)="updateForm()" novalidate>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="row">
           <div class="col-xs-12 col-lg-12">
             <div class="form-group">
@@ -35,11 +34,13 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-light col-lg-5" [disabled]="!editForm.valid">Save</button>
-      </form>
+      </div>
+      <div class="col-xs-12 col-lg-6 col-md-6">
+        <img [src]="image.value" class="img-responsive">
+      </div>
     </div>
-    <div class="col-lg-6 col-md-6">
-      <img [src]="image.value" class="img-responsive">
+    <div class="row">
+      <button type="submit" class="btn btn-light col-6 offset-3" [disabled]="!editForm.valid">Save</button>
     </div>
-  </div>
+  </form>
 </div>

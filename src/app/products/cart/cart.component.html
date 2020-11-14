@@ -1,0 +1,56 @@
+<!-- <p>cart-list works!</p> -->
+<div class="row search">
+  <div class="col-xs-12 col-md-12 col-lg-12">
+    <div [(ngModel)]="filteredSearch" ngDefaultControl>
+      <nb-search type="rotate-layout" tag="rotate-layout" (click)="onSearch()"></nb-search>
+      <input type="text" value="{{ filteredSearch }}" disabled>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="cartProducts.length > 0">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-lg-4">
+      <app-cart-calculator [products]="cartProducts"></app-cart-calculator>
+    </div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="row">
+        <div *ngFor="let product of cartProducts | filter:'name':filteredSearch"
+          class="col-xs-12 col-md-6 col-lg-6 product">
+          <div class="item">
+            <div class="mb-r">
+              <img [src]="product.image" alt="" class="img-responsive" height="250px" width="250px">
+              <h6>{{ product.name | shorten:20 }}</h6>
+              <p>{{ product.description | shorten:50 }}</p>
+              <p>{{ product.price }}$</p>
+              <hr>
+              <div class="container">
+                <div class="row">
+                  <div class="col-4 offset-4">
+                    <button class="btn btn-link" (click)="removeCartProduct(product)">
+                      <nb-icon icon="trash-2-outline"></nb-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container cart" *ngIf="cartProducts.length === 0">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="row">
+        <p class="cart-paragraph">Oops! You have not added any products to your cart yet</p>
+      </div>
+      <div class="row">
+        <a class="btn btn-light col-lg-4 offset-lg-4 cart-button" routerLink="/products"
+          routerLinkActive="active">Products</a>
+      </div>
+    </div>
+  </div>
+</div>

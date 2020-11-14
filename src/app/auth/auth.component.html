@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-4 offset-lg-4">
+    <!-- <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div> -->
+    <!-- <div style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+    </div> -->
+    <form #loginForm="ngForm" (ngSubmit)="signInWithEmail(loginForm)">
+      <div class="form-group">
+        <label for="loginEmailId">Your Email</label>
+        <input type="email" class="form-control" id="loginEmailId" aria-describedby="emailHelp"
+          placeholder="Enter email" name="emailId" [(ngModel)]="user.emailId" mdbInputValidate [email]="true" />
+      </div>
+      <div class="form-group">
+        <label for="password">Your Password</label>
+        <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+          [(ngModel)]="user.loginPassword" autocomplete="current-password" placeholder="Password" />
+      </div>
+      <div>
+        <button class="btn btn-light" type="submit" id="loginButton" mdbRippleRadius>
+          Sign In
+        </button>
+      </div>
+      <div>
+        <a data-toggle="modal"
+        data-target="#createUserForm">
+          Don't have an account yet? Sign Up
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div
+    class="modal fade"
+    id="createUserForm"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog cascading-modal" role="document">
+      <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+        <div class="modal-content">
+          <div class="modal-header light-blue darken-3 white-text">
+            <h4 class="title"><i class="fa fa-user-plus"></i> Register</h4>
+            <button
+              type="button"
+              class="close waves-effect waves-light"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group form-sm">
+              <label for="emailId">Your email</label>
+              <input
+                mdbActive
+                type="email"
+                id="emailId"
+                class="form-control"
+                name="emailId"
+                [(ngModel)]="createUser.emailId"
+                placeholder="Enter email"
+                mdbInputValidate
+                [email]="true"
+                autocomplete="email"
+              />
+            </div>
+            <div class="form-group form-sm">
+              <label for="password">password</label>
+              <input
+                mdbActive
+                type="password"
+                id="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="createUser.password"
+                placeholder="Password"
+                mdbInputValidate
+                autocomplete="new-password"
+              />
+            </div>
+            <div class="text-center mt-2">
+              <button
+                class="btn btn-light"
+                id="signUpButton"
+                mdbRippleRadius
+              >
+                Sign up
+                <i class="fa fa-sign-in ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

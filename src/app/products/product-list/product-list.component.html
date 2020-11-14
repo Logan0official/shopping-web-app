@@ -1,0 +1,45 @@
+<div class="row search">
+  <div class="col-xs-12 col-md-4 col-lg-4">
+    <div [(ngModel)]="filteredSearch" ngDefaultControl class="row">
+      <nb-search type="rotate-layout" tag="rotate-layout" (click)="onSearch()"></nb-search>
+      <input type="text" value="{{ filteredSearch }}" disabled>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-2 offset-md-6 col-lg-2 offset-lg-6">
+    <nb-select placeholder="Sort By" status="basic" [(selected)]="selectedItem">
+      <nb-option value="">Sort By</nb-option>
+      <nb-option value="1" (click)="onLess()">From less to more</nb-option>
+      <nb-option value="2" (click)="onMore()">From more to less</nb-option>
+    </nb-select>
+  </div>
+</div>
+<div class="container">
+  <div class="row" *ngIf="!loading">
+    <div *ngFor="let product of productList | filter:'name':filteredSearch "
+      class="col-xs-12 col-md-6 col-lg-4 product">
+      <a [routerLink]="['/products', product.$key]" routerLinkActive="active">
+        <img [src]="product.image" alt="product.name" class="img-responsive" height="250px" width="250px">
+        <h6>{{ product.name | shorten:20 }}</h6>
+        <p>{{ product.description | shorten:50 }}</p>
+        <p>{{ product.price }}$</p>
+      </a>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class=" col-3 offset-1">
+            <button class="btn btn-link" placement="top" mdbTooltip="Add to Wishlist" container="body"
+              (click)="addFavourite(product)">
+              <nb-icon icon="heart-outline"></nb-icon>
+            </button>
+          </div>
+          <div class="col-3 offset-3">
+            <button class="btn btn-link" placement="top" mdbTooltip="Add to Cart" container="body"
+              (click)="addToCart(product)">
+              <nb-icon icon="shopping-cart-outline"></nb-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

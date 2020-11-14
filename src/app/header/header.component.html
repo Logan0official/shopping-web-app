@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+        <span class="navbar-toggler-icon" ></span>
+      </button> -->
+      <a routerLink="/" class="navbar-brand">SHOPPING WEB APP</a>
+    </div>
+
+    <div class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
+        <li *ngIf="this.authService.user$ | async as user">
+          {{ user.emailId }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <a class="btn btn-light" routerLink="/products" routerLinkActive="active">Products</a>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <a class="btn btn-light" routerLink="/favourite" routerLinkActive="active">Favourite<nb-badge text="{{ productService.getLocalFavouriteProducts().length }}" position="top right">
+      </nb-badge></a>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-2">
+      <a class="btn btn-light" routerLink="/cart" routerLinkActive="active">Cart<nb-badge text="{{ productService.getLocalCartProducts().length }}" position="top right">
+      </nb-badge></a>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-2">
+      <a class="btn btn-light" routerLink="{{ isAuthenticated ? '/admin' : '/auth' }}"
+        routerLinkActive="active">{{ isAuthenticated ? 'Admin' : 'Sign In' }}</a>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-2" *ngIf="isAuthenticated">
+      <a class="btn btn-light" (click)="onLogout()">Logout</a>
+    </div>
+  </div>
+  <hr>
+</nav>

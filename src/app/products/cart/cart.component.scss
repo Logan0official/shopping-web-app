@@ -1,0 +1,144 @@
+.product {
+  border: 2px solid gray;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 15px;
+  max-width: 45%;
+}
+
+h6, p {
+  color: black;
+}
+
+img {
+  margin: 10px 20px;
+}
+
+nb-icon {
+  color: gray;
+  height: 2rem;
+  width: 2rem;
+}
+
+nb-search {
+  position: relative;
+}
+
+input {
+  border: 2px solid gray;
+  border-radius: 20px 20px 20px 20px;
+  padding: 5px 30px;
+  background-color: rgba(80, 80, 80, 0.1);
+  margin-left: -40px;
+}
+
+.cart {
+  min-height: 400px;
+}
+
+.cart-paragraph {
+  margin-top: 20%;
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  line-height: normal !important;
+}
+
+.cart-button {
+  border: 2px solid gray;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  .product {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  img {
+    margin: 10px 10%;
+    width: 80%;
+    height: 50%;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .product {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  img {
+    margin: 10px 10%;
+    width: 80%;
+    height: 55%;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 519px) {
+  .product {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  img {
+    margin: 10px 10%;
+    width: 80%;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 520px) and (max-width: 767px) {
+  .product {
+    margin: 10px 10px;
+    max-width: 45%;
+  }
+
+  img {
+    margin: 10px 10%;
+    width: 80%;
+    height: 40%;
+  }
+
+  h6, p {
+    height: 40px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .product {
+    max-width: 45%;
+    margin: 10px 10px;
+  }
+
+  img {
+    margin: 10px 12.5%;
+    width: 75%;
+    height: 50%;
+  }
+
+  h6, p {
+    height: 40px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .product {
+    max-width: 45%;
+    margin: 10px 10px;
+  }
+
+  img {
+    margin: 10px 12.5%;
+    width: 75%;
+    height: 45%;
+  }
+}

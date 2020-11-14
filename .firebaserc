@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "shopping-backend-firebas-d3710": {
+      "hosting": {
+        "shopping-web-app": [
+          "shopping-backend-firebas-d3710"
+        ]
+      }
+    }
+  }
+}

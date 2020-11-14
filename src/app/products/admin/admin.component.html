@@ -1,0 +1,43 @@
+<div class="row search">
+  <div class="col-xs-12">
+    <div [(ngModel)]="filteredSearch" ngDefaultControl>
+      <nb-search type="rotate-layout" tag="rotate-layout" (click)="onSearch()"></nb-search>
+      <input type="text" value="{{ filteredSearch }}" disabled>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+      <button type="button" class="btn btn-light" (click)="onNewProduct()">Create new product</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row table">
+    <div *ngFor="let product of productList | filter:'name':filteredSearch" class="col-lg-12">
+      <div class="item">
+        <div class="mb-r">
+          <ul class="row">
+            <li class="col-lg-3 gray">
+              <p>{{ product.name | shorten:15 }}</p>
+            </li>
+            <li class="col-lg-5 white">
+              <p>{{ product.description | shorten:25 }}</p>
+            </li>
+            <li class="col-lg-1 gray">
+              <p>{{ product.price | shorten:7 }}$</p>
+            </li>
+            <li class="col-lg-1 white d-flex justify-content-center"><img [src]="product.image"></li>
+            <li class="col-lg-1 gray"><button class="btn btn-link" (click)="onEditProduct(product.$key)">
+                <nb-icon icon="edit-outline"></nb-icon>
+              </button></li>
+            <li class="col-lg-1 gray"><button class="btn btn-link" (click)="removeProduct(product.$key)">
+                <nb-icon icon="trash-2-outline"></nb-icon>
+              </button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

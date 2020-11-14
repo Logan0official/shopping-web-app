@@ -1,0 +1,47 @@
+<!-- <p>favourite-list works!</p> -->
+<div class="row search">
+  <div class="col-xs-12">
+    <div [(ngModel)]="filteredSearch" ngDefaultControl>
+      <nb-search type="rotate-layout" tag="rotate-layout" (click)="onSearch()"></nb-search>
+      <input type="text" value="{{ filteredSearch }}" disabled>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="favoruiteProducts.length > 0">
+  <div class="row">
+    <div *ngFor="let product of favoruiteProducts | filter:'name':filteredSearch" class="col-xs-12 col-md-6 col-lg-4 product">
+      <div class="item">
+        <div class="mb-r">
+          <img [src]="product.image" alt="" class="img-responsive" height="250px" width="250px">
+          <h6>{{ product.name | shorten:20 }}</h6>
+          <p>{{ product.description | shorten:50 }}</p>
+          <p>{{ product.price }}$</p>
+          <hr>
+          <div class="container">
+            <div class="row">
+              <div class="col-4 offset-4">
+                <button class="btn btn-link" (click)="removeFavourite(product)">
+                  <nb-icon icon="trash-2-outline"></nb-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container favorites" *ngIf="favoruiteProducts.length === 0">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="row">
+        <p class="favorites-paragraph">Oops! You have not added any products to your favorites yet</p>
+      </div>
+      <div class="row">
+        <a class="btn btn-light col-lg-4 offset-lg-4 favorites-button" routerLink="/products"
+          routerLinkActive="active">Products</a>
+      </div>
+    </div>
+  </div>
+</div>

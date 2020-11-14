@@ -1,0 +1,33 @@
+input {
+  border: 2px solid gray;
+}
+
+button {
+  border: 2px solid gray;
+  background-color: rgba(80, 80, 80, 0.1);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.btn-light {
+  width: 100%;
+  margin: 20px 0;
+}
+
+button:focus,
+button:hover {
+  border: 2px solid gray;
+  background-color: rgba(80, 80, 80, 0.3);
+}
+
+label {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 25px 0 15px 0;
+}
+
+a {
+  color: blue !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}

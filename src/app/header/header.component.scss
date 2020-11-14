@@ -1,0 +1,72 @@
+nb-badge {
+  background-color: gray !important;
+  color: white !important;
+  width: 2rem;
+  margin-top: 5px;
+}
+
+.navbar {
+  height: 5rem;
+}
+
+.navbar-brand {
+  font-size: 35px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav.navbar,
+a.btn {
+  margin: 5px;
+  padding: 15px;
+  border: 2px solid gray;
+  background-color: white;
+}
+
+li {
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+}
+
+hr {
+  border: 1px solid rgba(80, 80, 80, 0.3);
+}
+
+a.btn {
+  margin-top: 15px;
+  color: black;
+  font-weight: 600;
+  font-size: 25px;
+  text-decoration: none;
+  width: 100%;
+}
+
+a.btn:hover,
+a.btn:focus,
+a.btn:active {
+  border: 2px solid gray !important;
+  background-color: rgba(80, 80, 80, 0.3) !important;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  li {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .navbar-brand {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  li {
+    font-size: 20px;
+  }
+}
